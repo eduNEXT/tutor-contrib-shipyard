@@ -1,0 +1,8 @@
+{% if SHIPYARD_NEWRELIC -%}
+- name: newrelic-cm
+  files:
+  - plugins/shipyard/k8s/newrelic.ini
+  options:
+    labels:
+        app.kubernetes.io/name: openedx
+{% endif -%}
