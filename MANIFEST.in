@@ -1,0 +1,2 @@
+recursive-include tutorshipyard/patches *
+recursive-include tutorshipyard/templates *
