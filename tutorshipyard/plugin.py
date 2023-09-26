@@ -15,7 +15,6 @@ from .__about__ import __version__
 ########################################
 
 config = {
-    # Add here your new settings
     "defaults": {
         "VERSION": __version__,
         "AUTO_TLS": True,
@@ -34,7 +33,7 @@ config = {
         # "CMS_WORKER_REQUEST_CPU": "600m",
         # "CMS_WORKER_REQUEST_MEMORY": "1Gi",
         # "ENABLE_OVERRIDES": False,
-        # "FLOWER": False,
+        "FLOWERS": False,
         # "ENABLE_RESOURCE_MANAGEMENT": False,
         "INGRESS": False,
         "INGRESS_EXTRA_HOSTS": [],
@@ -63,8 +62,7 @@ config = {
         # "FORUM_MAX_REPLICAS": 1,
         # "FORUM_MIN_REPLICAS": 1,
         # "FORUM_TARGET_CPU": 90,
-        # "DEBUG": False,
-        # "OPENEDX_DEBUG_COOKIE": "ednx_enable_debug",
+        "DEBUG": False,
         # "CMS_SSO_USER": "cms"
     },
     # Add here settings that don't have a reasonable default for all users. For
@@ -74,7 +72,6 @@ config = {
     },
     # Danger zone! Add here values to override settings from Tutor core or other plugins.
     "overrides": {
-        "PLATFORM_NAME": "My platform as defined in plugin.py",
     },
 }
 
@@ -84,6 +81,8 @@ hooks.Filters.CONFIG_DEFAULTS.add_items(
         for key, value in config["defaults"].items()
     ]
 )
+
+hooks.Filters.CONFIG_DEFAULTS.add_items([("OPENEDX_DEBUG_COOKIE", "ednx_enable_debug")])
 
 hooks.Filters.CONFIG_UNIQUE.add_items(
     [
