@@ -118,14 +118,4 @@ spec:
       - configMap:
           name: newrelic-cm
         name: newrelic-ini
----
-{%- endif %}
-{%- if FORUM_DOCKER_IMAGE is defined %}
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: forum
-  annotations:
-    argocd.argoproj.io/sync-wave: "4"
----
 {%- endif %}

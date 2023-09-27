@@ -1,3 +1,3 @@
-{%- if SHIPYARD_ENABLE_RESOURCE_MANAGEMENT or SHIPYARD_NEWRELIC %}
--  plugins/shipyard/k8s/overrides.yml
+{% if SHIPYARD_ENABLE_RESOURCE_MANAGEMENT or SHIPYARD_NEWRELIC -%}
+- plugins/shipyard/k8s/overrides.yml
 {%- endif %}
