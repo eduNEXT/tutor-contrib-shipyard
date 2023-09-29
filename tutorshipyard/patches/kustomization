@@ -1,0 +1,10 @@
+patches:
+{% if SHIPYARD_NEWRELIC -%}
+- target:
+    kind: Deployment
+    name: "lms"
+  path: plugins/shipyard/k8s/newrelic.yml
+{% endif -%}
+{% if SHIPYARD_DEBUG is defined and SHIPYARD_DEBUG %}
+{%- endif %}
+{{ patch("shipyard-kustomization-patches") }}

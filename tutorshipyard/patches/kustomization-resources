@@ -1,7 +1,7 @@
-{% if SHIPYARD_FLOWERS|default(false) -%}
+{% if SHIPYARD_FLOWERS -%}
 - plugins/shipyard/k8s/flowers.yml
 {%- endif %}
-{% if SHIPYARD_INGRESS|default(false) -%}
+{% if SHIPYARD_INGRESS -%}
 - plugins/shipyard/k8s/ingress.yml
 {%- endif %}
 {% if SHIPYARD_DEBUG -%}
